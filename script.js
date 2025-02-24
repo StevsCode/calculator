@@ -30,3 +30,14 @@ function divideResult(a, b) {
         .reduce((acc, curr) => acc / curr, 0);
 };
 console.log(divideResult(10, 5));
+
+
+// Create variables for each part of the operation
+// First number
+const firstNum = new Array(0, 1, 2, 3, 4, 5, 6, 7, 8, 9);
+
+// Operator
+const operator = new Array(+, -, *, /);
+
+// Second number
+const secondNum = new Array(0, 1, 2, 3, 4, 5, 6, 7, 8, 9);
