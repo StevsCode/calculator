@@ -37,7 +37,21 @@ console.log(divideResult(10, 5));
 const firstNum = new Array(0, 1, 2, 3, 4, 5, 6, 7, 8, 9);
 
 // Operator
-const operator = new Array(+, -, *, /);
+const operator = new Array("+", "-", "*", "/");
 
 // Second number
 const secondNum = new Array(0, 1, 2, 3, 4, 5, 6, 7, 8, 9);
+
+
+// Create function that makes the operation
+function operate(operator, firstNum, secondNum) {
+    if (operator === "+") {
+        return addResult(firstNum, secondNum)
+    } else if (operator === "-") {
+        return subtractResult(firstNum, secondNum)
+    } else if (operator === "*") {
+        return multiplyResult(firstNum, secondNum)
+    } else {
+        return divideResult(firstNum, secondNum)
+    };
+};
