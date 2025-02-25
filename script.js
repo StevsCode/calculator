@@ -55,3 +55,8 @@ function operate(operator, firstNum, secondNum) {
         return divideResult(firstNum, secondNum)
     };
 };
+
+
+// Display each digit 
+
+// Store the number on the display
