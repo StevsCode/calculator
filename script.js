@@ -65,9 +65,40 @@ digitVar.forEach(button => {
     button.addEventListener("click", displayFun);
 });
 function displayFun() {
-    if (displayVar.textContent === "0") {
+    if (displayVar.textContent === "0" || operated === true) {
         displayVar.textContent = this.textContent;
+        operated = false;
     } else {
         displayVar.textContent += this.textContent;
     }
+};
+
+
+// Store the first and second numbers
+let operatorVar = document.querySelectorAll(".operator");
+operatorVar.forEach(button => {
+    button.addEventListener("click", saveFirst);
+});
+let elementOne = 0;
+let operated = false;
+function saveFirst() {
+    elementOne = displayVar.textContent;
+    displayVar.textContent = this.textContent;
+    operated = true;
+};
+// Operate on the numbers when = is pressed
+let equalsVar = document.querySelector(".equals");
+equalsVar.addEventListener("click", saveLast);
+let elementTwo = 0;
+function saveLast() {
+    elementTwo = displayVar.textContent;
+    if (operatorVar.textContent === "+") {
+        addResult(elementOne, elementTwo);
+    } else if (operatorVar.textContent === "-") {
+        subtractResult(elementOne, elementTwo);
+    } else if (operatorVar.textContent === "*") {
+        multiplyResult(elementOne, elementTwo);
+    } else if (operatorVar.textContent === "/") {
+        divideResult(elementOne, elementTwo);
+    };
 };
