@@ -57,6 +57,17 @@ function operate(operator, firstNum, secondNum) {
 };
 
 
-// Display each digit 
-
+// Display each digit
 // Store the number on the display
+let displayVar = document.querySelector(".display");
+let digitVar = document.querySelectorAll(".digit");
+digitVar.forEach(button => {
+    button.addEventListener("click", displayFun);
+});
+function displayFun() {
+    if (displayVar.textContent === "0") {
+        displayVar.textContent = this.textContent;
+    } else {
+        displayVar.textContent += this.textContent;
+    }
+};
