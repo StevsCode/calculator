@@ -145,6 +145,15 @@ function deleteFun() {
     }
 }
 
+// Add percentage function
+let percentVar = document.querySelector(".percent");
+percentVar.addEventListener("click", percentFun);
+function percentFun() {
+    let currentValue = parseFloat(displayVar.textContent);
+    let result = currentValue / 100;
+    displayVar.textContent = round(result);
+};
+
 // Add keyboard support for each button
 document.addEventListener("keydown", (event) => {
     const key = event.key;
@@ -162,6 +171,8 @@ document.addEventListener("keydown", (event) => {
     else if (key >= "0" && key <= "9") clickDigit(key);
     
     else if (key === ".") decimalFun();
+
+    else if (key === "5" && shift) percentFun();
 });
 
 function clickDigit(digit) {
