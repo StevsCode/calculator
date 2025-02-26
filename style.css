@@ -5,6 +5,9 @@
     flex-wrap: wrap;
     justify-content: space-between;
     gap: 10px;
+    background-color: rgba(0, 0, 0, 0.315);
+    border-radius: 15%;
+    padding: 30px;
 }
 
 button {
@@ -14,19 +17,23 @@ button {
     font-size: 45px;
     text-align: center;
     border-radius: 45%;
+    border: outset black 5px;
+    background-color: rgb(158, 231, 255);
 }
 
 .display {
     width: 575px;
     height: 100px;
-    border: solid black 5px;
+    border: inset black 5px;
     display: flex;
     justify-content: end;
     align-items: center;
+    margin-top: 50px;
     margin-bottom: 60px;
     font-family:'New Rocker', Times, serif;
     font-size: 60px;
     padding-right: 35px;
+    background-color: rgb(175, 175, 175);
 }
 
 .container {
@@ -34,5 +41,9 @@ button {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    height: 100vh;
+    background: #f0f0f0 url('Images/wood.jpg') center center;
+    width: 700px;
+    height: 1100px;
+    border-radius: 10%;
+    border: outset rgb(0, 255, 0) 5px;
 }
