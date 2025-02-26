@@ -24,6 +24,9 @@ button {
     justify-content: end;
     align-items: center;
     margin-bottom: 60px;
+    font-family:'New Rocker', Times, serif;
+    font-size: 60px;
+    padding-right: 35px;
 }
 
 .container {
