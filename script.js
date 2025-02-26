@@ -132,3 +132,15 @@ function decimalFun() {
         decimalVar.disabled = true;
     }
 }
+
+
+// Animate DEL button
+let deleteVar = document.querySelector(".delete");
+deleteVar.addEventListener("click", deleteFun);
+function deleteFun() {
+    if (displayVar.textContent.length > 1) {
+        displayVar.textContent = displayVar.textContent.slice(0, -1);
+    } else {
+        displayVar.textContent = "0";
+    }
+}
