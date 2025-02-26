@@ -1,6 +1,9 @@
 // Create functions for the four operations and test them
+// Enable and disable = button
 let firstNum = 0;
 let lastNum = 0;
+let equalsVar = document.querySelector(".equals");
+equalsVar.disabled = true;
 
 // Add
 function addResult(a, b) {
@@ -64,12 +67,12 @@ let operatorVar = "+";
 function saveFirst() {
     firstNum = parseFloat(displayVar.textContent);
     operatorVar = this.textContent
-    displayVar.textContent = this.textContent;
+    displayVar.textContent = "0";
     operated = true;
+    equalsVar.disabled = false;
 };
 
 // Operate on the numbers when = is pressed
-let equalsVar = document.querySelector(".equals");
 equalsVar.addEventListener("click", saveLast);
 function saveLast() {
     lastNum = parseFloat(displayVar.textContent);
@@ -77,7 +80,9 @@ function saveLast() {
     let result = operate(operatorVar, firstNum, lastNum);
     displayVar.textContent = round(result);
     operated = true;
+    equalsVar.disabled = true;
 };
+
 
 // Round number to the first two decimals
 function round(num) {
