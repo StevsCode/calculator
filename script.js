@@ -154,6 +154,13 @@ function percentFun() {
     displayVar.textContent = round(result);
 };
 
+// Add change sign function
+let signVar = document.querySelector(".sign");
+signVar.addEventListener("click", signFun);
+function signFun() {
+    displayVar.textContent *= -1;
+};
+
 // Add keyboard support for each button
 document.addEventListener("keydown", (event) => {
     const key = event.key;
