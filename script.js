@@ -144,3 +144,34 @@ function deleteFun() {
         displayVar.textContent = "0";
     }
 }
+
+// Add keyboard support for each button
+document.addEventListener("keydown", (event) => {
+    const key = event.key;
+    const shift = event.shiftKey;
+
+    if (key.toLowerCase() === "c") clearFun();
+    else if (key === "Backspace") deleteFun();
+    
+    else if (key === "/" || (key === "7" && shift)) clickOperator("/");
+    else if (key === "*" || (key === "+" && shift)) clickOperator("*");
+    else if (key === "-") clickOperator("-");
+    else if (key === "+") clickOperator("+");
+    else if (key === "=" || key === "Enter") saveLast();
+
+    else if (key >= "0" && key <= "9") clickDigit(key);
+    
+    else if (key === ".") decimalFun();
+});
+
+function clickDigit(digit) {
+    document.querySelectorAll(".digit").forEach(button => {
+        if (button.textContent === digit) button.click();
+    });
+}
+
+function clickOperator(operator) {
+    document.querySelectorAll(".operator").forEach(button => {
+        if (button.textContent === operator) button.click();
+    });
+}
