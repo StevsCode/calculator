@@ -2,8 +2,8 @@
 // Enable and disable = button
 let firstNum = 0;
 let lastNum = 0;
-let equalsVar = document.querySelector(".equals");
-equalsVar.disabled = true;
+let operatorPressed = false;
+
 
 // Add
 function addResult(a, b) {
@@ -69,26 +69,31 @@ operatorBox.forEach(button => {
 let operated = false;
 let operatorVar = "+";
 function saveFirst() {
-    firstNum = parseFloat(displayVar.textContent);
-    operatorVar = this.textContent
-    displayVar.textContent = "0";
-    operated = true;
-    equalsVar.disabled = false;
+    if (operatorPressed === true) { // Only take the last operator entered
+        operatorVar = this.textContent;
+    } else {
+        firstNum = parseFloat(displayVar.textContent);
+        operatorVar = this.textContent
+        displayVar.textContent = "0";
+        operated = true;
+        operatorPressed = true;
+    };
 };
 
 // Operate on the numbers when = is pressed
+let equalsVar = document.querySelector(".equals");
 equalsVar.addEventListener("click", saveLast);
 function saveLast() {
     lastNum = parseFloat(displayVar.textContent);
     operate(operatorVar, firstNum, lastNum);
     let result = operate(operatorVar, firstNum, lastNum);
     if (result === "Nice try, Einstein.") {
-        displayVar.textContent = "Nice try, Einstein.";
+        displayVar.textContent = "Nice try, Einstein."; // Snarky message if divides by 0
     } else {
         displayVar.textContent = round(result);
     };
     operated = true;
-    equalsVar.disabled = true;
+    operatorPressed = false;
 };
 
 
@@ -102,10 +107,10 @@ function round(num) {
 let clearVar = document.querySelector(".clear");
 clearVar.addEventListener("click", clearFun);
 function clearFun() {
-    equalsVar.disabled = true;
     operated = false;
     firstNum = 0;
     lastNum = 0;
     operatorVar = "";
     displayVar.textContent = "0";
+    operatorPressed = false;
 }
