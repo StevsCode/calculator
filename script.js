@@ -88,3 +88,16 @@ function saveLast() {
 function round(num) {
     return Math.round(num * Math.pow(10, 2)) / Math.pow(10, 2);
 }
+
+
+// Start fresh when Clear is pressed
+let clearVar = document.querySelector(".clear");
+clearVar.addEventListener("click", clearFun);
+function clearFun() {
+    equalsVar.disabled = true;
+    operated = false;
+    firstNum = 0;
+    lastNum = 0;
+    operatorVar = "";
+    displayVar.textContent = "0";
+}
