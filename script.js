@@ -22,7 +22,11 @@ function multiplyResult(a, b) {
 
 // Divide
 function divideResult(a, b) {
+    if (b === 0) {
+    return "Nice try, Einstein.";
+    } else {
     return a / b;
+    };
 };
 
 
@@ -78,7 +82,11 @@ function saveLast() {
     lastNum = parseFloat(displayVar.textContent);
     operate(operatorVar, firstNum, lastNum);
     let result = operate(operatorVar, firstNum, lastNum);
-    displayVar.textContent = round(result);
+    if (result === "Nice try, Einstein.") {
+        displayVar.textContent = "Nice try, Einstein.";
+    } else {
+        displayVar.textContent = round(result);
+    };
     operated = true;
     equalsVar.disabled = true;
 };
