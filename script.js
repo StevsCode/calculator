@@ -75,6 +75,11 @@ function saveLast() {
     lastNum = parseFloat(displayVar.textContent);
     operate(operatorVar, firstNum, lastNum);
     let result = operate(operatorVar, firstNum, lastNum);
-    displayVar.textContent = result;
+    displayVar.textContent = round(result);
     operated = true;
 };
+
+// Round number to the first two decimals
+function round(num) {
+    return Math.round(num * Math.pow(10, 2)) / Math.pow(10, 2);
+}
