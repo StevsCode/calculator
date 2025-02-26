@@ -17,14 +17,14 @@ button {
     font-size: 45px;
     text-align: center;
     border-radius: 45%;
-    border: outset black 5px;
+    border: outset rgb(0, 255, 0) 5px;
     background-color: rgb(158, 231, 255);
     transition: all 0.3s ease;
 }
 
 .display {
     width: 575px;
-    height: 100px;
+    height: 120px;
     border: inset black 5px;
     display: flex;
     justify-content: end;
@@ -51,12 +51,23 @@ button {
 
 .positioner {
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
+    gap: 50px;
     height: 100vh;
     background-color: rgba(0, 0, 0, 0.39);
 }
 
 body {
-    background: #00000021 url('Images/fantasy.jpg') center center;
+    background: #00000021 url('Images/fantasy.jpg') repeat center center;
+}
+
+.header {
+    font-family:'New Rocker', Times, serif;
+    font-size: 100px;
+    background: #f0f0f0 url('Images/wood.jpg') center center;
+    padding: 25px 50px;
+    border: inset brown 5px;
+    border-radius: 40%;
 }
