@@ -1,0 +1,17 @@
+.buttons {
+    width: 575px;
+    height: 725px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 10px;
+}
+
+button {
+    width: 125px;
+    height: 125px;
+    font-family:'New Rocker', Times, serif;
+    font-size: 45px;
+    text-align: center;
+    border-radius: 45%;
+}
