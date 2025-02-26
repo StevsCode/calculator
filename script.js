@@ -193,3 +193,17 @@ function clickOperator(operator) {
         if (button.textContent === operator) button.click();
     });
 }
+
+
+// Scale buttons when mouse hovers
+const buttons = document.querySelectorAll('button');
+
+buttons.forEach(button => {
+  button.addEventListener('mouseover', () => {
+    button.style.transform = 'scale(1.2)';
+  });
+
+  button.addEventListener('mouseout', () => {
+    button.style.transform = 'scale(1)';
+  });
+});
