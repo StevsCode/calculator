@@ -69,6 +69,7 @@ operatorBox.forEach(button => {
 let operated = false;
 let operatorVar = "+";
 function saveFirst() {
+    decimalVar.disabled = false;
     if (operatorPressed === true) { // Only take the last operator entered
         operatorVar = this.textContent;
     } else {
@@ -94,6 +95,7 @@ function saveLast() {
     };
     operated = true;
     operatorPressed = false;
+    decimalVar.disabled = false;
 };
 
 
@@ -113,4 +115,20 @@ function clearFun() {
     operatorVar = "";
     displayVar.textContent = "0";
     operatorPressed = false;
+    decimalVar.disabled = false;
+}
+
+
+// Animate "." button and disable it
+let decimalVar = document.querySelector(".decimal");
+decimalVar.disabled = false;
+decimalVar.addEventListener("click", decimalFun);
+function decimalFun() {
+    if (displayVar.textContent !== "0") {
+        displayVar.textContent += ".";
+        decimalVar.disabled = true;
+    } else {
+        displayVar.textContent = "0.";
+        decimalVar.disabled = true;
+    }
 }
