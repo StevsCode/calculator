@@ -55,12 +55,15 @@ button {
     justify-content: center;
     align-items: center;
     gap: 50px;
+    padding-top: 100px;
+    padding-bottom: 100px;
     height: 100vh;
     background-color: rgba(0, 0, 0, 0.39);
 }
 
 body {
     background: #00000021 url('Images/fantasy.jpg') repeat center center;
+    height: 100vh;
 }
 
 .header {
